@@ -36,7 +36,7 @@ var BOSS_COLOR = 'rgba(35, 71, 148,0.8)';
 // - main ---------------------------------------------------------------------
 window.onload = function () {
   var img = new Image();
-  img.src = "back5.bmp";
+  img.src = "back8.bmp";
   var i, j;
   var p = new Point();
 
@@ -449,7 +449,7 @@ window.onload = function () {
             );
             /*boss[i].param++;*/
             // ショットを打つかどうかパラメータの値からチェック                               
-            if ( /*SHOT_*/ bosscounter % 30 == 0) {
+            if ( /*SHOT_*/ bosscounter % 50 == 0) {
               a = boss[i].position.distance(chara.position);
               a.normalize();
               let Vectors = [{
@@ -461,6 +461,21 @@ window.onload = function () {
               }, {
                 x: 0,
                 y: 1.5
+              },{
+                x: 0,
+                y: -1.5
+              },{
+                x: 1.08,
+                y: 1.08
+              },{
+                x: 1.08,
+                y: -1.08
+              },{
+                x: -1.08,
+                y: 1.08
+              },{
+                x: -1.08,
+                y: -1.08
               },
                /*a*/];
               let vectorCounter = 0;
@@ -470,7 +485,7 @@ window.onload = function () {
                   if (boss[i].type == 0) {
                     // エネミーショットを新規にセットする
 
-                    bossShot[j].set(boss[i].position, Vectors[vectorCounter], 5, 3);
+                    bossShot[j].set(boss[i].position, Vectors[vectorCounter], 5, 2.5);
                     vectorCounter++;
                     if (vectorCounter >= Vectors.length) break;
                   }
