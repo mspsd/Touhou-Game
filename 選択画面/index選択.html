@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>めにゅー</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        
+        html,
+        body,
+        #container {
+            height: 100%;
+            width: 100%;
+        }
+        
+        body {
+            background-color: #EEE;
+            color: #222;
+            font-family: "Kokoro", "Rounded Mplus 1c", "Open Sans", 'Noto Sans Japanese', "Yu Gothic", "Meiryo UI", sans-serif;
+            font-weight: 300 !important;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        h1 {
+            font-weight: 300 !important;
+        }
+        
+        body>* {
+            flex-shrink: 0;
+        }
+        
+        #container {
+            display: flex;
+            flex-grow: 1;
+            flex-shrink: 1;
+            flex-wrap: wrap;
+        }
+        
+        #container>* {
+            flex-grow: 1;
+            display: inline-flex;
+            flex-basis: 200px;
+            margin: 1em;
+            box-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            padding: .5em;
+            flex-direction: column;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        #container>*>* {
+            flex-shrink: 0;
+        }
+        
+        .detail {
+            flex-shrink: 1 !important;
+            flex-grow: 1;
+            overflow-y: auto;
+        }
+        
+        #container>*:nth-child(1) {
+            background-color: #FFB74C;
+        }
+        
+        #container>*:nth-child(2) {
+            background-color: #272672;
+            color: #EEE;
+        }
+        
+        #container>*:nth-child(3) {
+            background-color: #C400CC;
+            color: #EEE;
+            text-shadow: 0 0 10px #000;
+        }
+        
+        #container>*:nth-child(1):hover {
+            box-shadow: 0 1px 14px #000;
+            background-color: rgba(255, 183, 76, 0.5);
+        }
+        
+        #container>*:nth-child(2):hover {
+            box-shadow: 0 1px 14px #000;
+            background-color: rgba(39, 38, 114, 0.8);
+        }
+        
+        #container>*:nth-child(3):hover {
+            box-shadow: 0 1px 14px #000;
+            background-color: rgba(196, 0, 204, 0.8);
+        }
+        
+        #container>*:nth-child(４):hover {
+            box-shadow: 0 1px 14px #000;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="text-align:center;">
+        <h1 style="transform: scaleX(-1);">疑似弾幕シューティング</h1><span style="text-size:1rem;text-weight:300">by八雲正邪</span></div>
+    <div id="container">
+        <div onclick="document.location.href = '../Brain%20God/index.html'">
+            <h1>橙クラス</h1>
+            <div class="detail">
+                <p>
+                    ノーマルクラス！
+                </p>
+                <p>
+                    << ルール>>
+                </p>
+                <p>
+                    ○右の数字キーで操作
+                </p>
+                <p>
+                    ○５かスペースキーで発射
+                </p>
+                <p>
+                    ○５方向に弾がでるよ！
+                </p>
+                <p>
+                    ○コントロールキーでスローに！
+                </p>
+                <p>
+                    <<説明>>
+                </p>
+                <p>
+                    滑らかに動くよ！
+                </p>
+                <p>
+                    １5００ポイント以上で技術あり！
+                </p>
+                <p>
+                    この橙クラスは、気力を試すよ！
+                </p>
+                <p>
+                    がんばってねーー！
+                </p>
+            </div>
+        </div>
+        <div onclick="document.location.href = '../Brain%20G/index.html'">
+            <h1>藍しゃまクラス</h1>
+            <div class="detail">
+                <p>
+                    ハードクラス！
+                </p>
+                <p>
+                    << ルール>>
+                </p>
+                <p>
+                    ○右の方向キーで操作
+                </p>
+                <p>
+                    ○スペースキーで発射
+                </p>
+                <p>
+                    ○3方向に弾がでます！
+                </p>
+                <p>
+                    ○コントロールキーでスローに！
+                </p>
+                <p>
+                    ○敵の中には、一回じゃ死なないのもいるかもしれませんね。
+                </p>
+                <p>
+                    <<説明>>
+                </p>
+                <p>
+                    少し重いかもしれませんね。
+                </p>
+                <p>
+                    10000ポイント以上で上手！
+                </p>
+                <p>
+                    この藍しゃまクラスは、技術を試すよ！
+                </p>
+                <p>
+                    がんばってくださいね！
+                </p>
+
+            </div>
+        </div>
+        <div onclick="document.location.href = '../Brain%20Good/index.html'">
+            <h1>紫様クラス</h1>
+            <div class="detail">
+                <p>
+                    不可侵クラス！
+                </p>
+                <p>
+                    << ルール>>
+                </p>
+                <p>
+                    ○右の数字キーで操作
+                </p>
+                <p>
+                    ○スペースキーで発射
+                </p>
+                <p>
+                    ○1方向にしか弾がでないよ！
+                </p>
+                <p>
+                    ○スロー機能は、無いよ！
+                </p>
+                <p>
+                    ○しかも、敵は弾に当たっても死なないかもね。
+                </p>
+                <p>
+                    <<説明>>
+                </p>
+                <p>
+                    それなりに重いからね！
+                </p>
+                <p>
+                    ポイントが"+"になったらすばらしい！ みんなに、自慢していいよ！
+                </p>
+                <p>
+                    この紫様クラスは、上級者向けよ！
+                </p>
+                <p>
+                    がんばってね。
+                </p>
+            </div>
+        </div>
+        <div>
+            <h1>説明-求聞史紀より</h1>
+            <div class="detail">
+                これは、東方projectを模したゲームで、より本家に近い形で作られています。 敵を倒すことを目的としています。 各クラスで操作方法やポイント換算が異なるのでご注意のうえ、お楽しみください。
+                <p>
+                    <<注意>>
+                </p>
+                <p>
+                    これは、天邪鬼である鬼人正邪によって悪戯されています。
+                </p>
+                <p>
+                    博麗の巫女により浄化されましたが、再汚染されているかもしれません。
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <style>
+        @import url('https://fonts.googleapis.com/earlyaccess/notosansjapanese.css');
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,700');
+        @import url('https://fonts.googleapis.com/earlyaccess/kokoro.css');
+        @import url('https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css');
+        @import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+    </style>
+</body>
+
+</html>
