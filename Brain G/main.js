@@ -127,16 +127,24 @@ window.onload = function () {
 
         // JIKI描画
         if (point < -Infinity) {
-          chara.size = 8;
+          chara.size = 10;
         }
         if (point > -Infinity) {
-          chara.size = 7;
+          chara.size = 10;
         };
 
+        //中心自機
         ChangeColor();
         ctx.beginPath();
-        ctx.arc(chara.position.x, chara.position.y, chara.size, 0, Math.PI * 2, false);
+        ctx.arc(chara.position.x, chara.position.y, chara.size, 0, Math.PI * 2, false);         
         ctx.fillStyle = CHARA_COLOR;
+        ctx.fill();
+
+        //左右自機
+        ctx.beginPath();           
+        ctx.arc(chara.position.x + 30, chara.position.y + 10, chara.size / 2, 0, Math.PI * 2, false);
+        ctx.arc(chara.position.x -30, chara.position.y + 10, chara.size/2, 0, Math.PI * 2, false);
+          ctx.fillStyle = 'rgba(220,20,60,1)';
         ctx.fill();
 
         // JIKIのチート玉
@@ -148,10 +156,10 @@ window.onload = function () {
               if (!charaShot[i].alive) {
                 switch (Count) {
                   case 0:
-                    charaShot[i].set(chara.position, 3, 0, 3);
+                    charaShot[i].set(chara.position, 4, 0, 3);
                     break;
                   case 1:
-                    charaShot[i].set(chara.position, 3, 1, 3);
+                    charaShot[i].set(chara.position, chara.size/4, 1, 3);
                     break;
                   case 2:
                     charaShot[i].set(chara.position, 3, -1, 3);
@@ -219,12 +227,17 @@ window.onload = function () {
                   case 23:
                     if (Arecheating) charaShot[i].set(chara.position, 3, -9, -2);
                     break;
+                    case 24:
+                    charaShot[i].set(chara.position, 3, 1, 3);
+                    break;
+                  case 25:
+                    charaShot[i].set(chara.position, 3, -1, 3);
 
                   default:
                     break;
                 }
                 Count++;
-                if (Count > 23) break;
+                if (Count > 25) break;
               }
             }
 
