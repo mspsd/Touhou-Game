@@ -124,21 +124,10 @@ Boss.prototype.set = function (p, size, type) {
 
 Boss.prototype.move = function () {
     this.param++;
-    switch (this.type) {
-        case 0:
-            break;
-     /*   case 1:
-            this.position.x += 3;
-            if (this.position.x > this.size + screenCanvas.width)
-                this.alive = false;
-            break;
-        case 2:
-            this.position.x -= 3;
-            if (this.position.x < -this.size)
-                this.alive = false;
-            break;*/
-    }
-};
+    if (this.position.y < (screenCanvas.height - this.size) / 2) {
+        this.position.y += 1;
+    };
+}
 // boss shot-------------------------
 function BossShot() {
     this.position = new Point();
@@ -155,7 +144,7 @@ BossShot.prototype.set = function (p, vector, size, speed) {
     this.size = size;
     this.speed = speed;
     this.vector = vector;
-    this.alive = true ;
+    this.alive = true;
 };
 BossShot.prototype.move = function () {
     // 座標をベクトルに応じてspeed分だけ移動させる
@@ -168,7 +157,38 @@ BossShot.prototype.move = function () {
         this.position.y < -this.size ||
         this.position.x > this.size + screenCanvas.width ||
         this.position.y > this.size + screenCanvas.height
-     ) {
+    ) {
         this.alive = false;
+    }
+};
+// - BossSAB-------------------------------------------------------------
+function BossSAB() {
+    this.position = new Point();
+    this.size = 100;
+    this.type = 0;
+    this.param = 0;
+    this.alive = false;
+}
+
+BossSAB.prototype.set = function (p, size, type) {
+    this.position.x = p.x;
+    this.position.y = p.y;
+    this.size = size;
+    this.type = type;
+    this.param = 0;
+    this.alive = true;
+};
+
+BossSAB.prototype.move = function () {
+    this.param++;
+    switch (this.type) {
+        case 0:
+            if (this.position.x >= screenCanvas.width / 4)
+                this.position.x -= 1;
+            break;
+        case 1:
+            if (this.position.x <= screenCanvas.width / 4 * 3)
+                this.position.x += 1;
+            break;
     }
 };
